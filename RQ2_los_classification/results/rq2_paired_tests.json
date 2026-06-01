@@ -1,0 +1,500 @@
+{
+  "haiku": {
+    "model": "haiku",
+    "folds_used": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_folds": 5,
+    "per_fold_macro_f1": {
+      "baseline": [
+        0.7899135551622934,
+        0.6973721340388007,
+        0.6835870116692035,
+        0.561904761904762,
+        0.8004992920485878
+      ],
+      "es": [
+        0.7590721968925678,
+        0.6951499118165785,
+        0.6959175084175083,
+        0.5085326953748006,
+        0.6980808184845676
+      ],
+      "spacy": [
+        0.786163822254048,
+        0.6725831161652057,
+        0.6901229617749265,
+        0.5223146223146223,
+        0.9082138729320844
+      ],
+      "hybrid": [
+        0.7828923817589052,
+        0.7153250188964474,
+        0.7208333333333332,
+        0.5221327710689413,
+        0.48134920634920636
+      ]
+    },
+    "mean": {
+      "baseline": 0.7066553509647295,
+      "es": 0.6713506261972045,
+      "spacy": 0.7158796790881773,
+      "hybrid": 0.6445065422813667
+    },
+    "std": {
+      "baseline": 0.09657856034326259,
+      "es": 0.09498577977819751,
+      "spacy": 0.1431238405661277,
+      "hybrid": 0.13377904579894528
+    },
+    "friedman": {
+      "chi2": 2.280000000000001,
+      "df": 3,
+      "p": 0.5163632002016327,
+      "p_chi2_approx": 0.5163632002016327,
+      "p_permutation": 0.5633718314084296,
+      "kendall_w": 0.15200000000000008,
+      "note": "chi2 p is asymptotic (unreliable at n=5 blocks); p_permutation is exact Monte-Carlo (20k, within-block)"
+    },
+    "pairwise": [
+      {
+        "pair": "baseline vs es",
+        "mean_delta": 0.035304724767525,
+        "cohen_dz": 0.7790779771562127,
+        "wilcoxon_p": 0.1875,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.15645882647463538,
+        "ttest_holm_p": 0.9387529588478123,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "baseline vs spacy",
+        "mean_delta": -0.009224328123447756,
+        "cohen_dz": -0.15927917017397483,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.7397125238414802,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "baseline vs hybrid",
+        "mean_delta": 0.06214880868336281,
+        "cohen_dz": 0.4241347646538351,
+        "wilcoxon_p": 0.625,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.39663203842053935,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "es vs spacy",
+        "mean_delta": -0.04452905289097275,
+        "cohen_dz": -0.4712896895378389,
+        "wilcoxon_p": 0.4375,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.3514053609126505,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "es vs hybrid",
+        "mean_delta": 0.026844083915837813,
+        "cohen_dz": 0.2526683480726242,
+        "wilcoxon_p": 0.625,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.6022662535676433,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "spacy vs hybrid",
+        "mean_delta": 0.07137313680681057,
+        "cohen_dz": 0.35739821001138633,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.46895853291828477,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      }
+    ],
+    "wilcoxon_min_two_sided_p": 0.0625,
+    "nadeau_bengio": {
+      "ratio": 0.2500010307153164,
+      "correction_factor": 0.4500010307153164,
+      "family": "baseline-vs-each enrichment, Holm across 3",
+      "largest_delta_pair": "spacy vs hybrid",
+      "tests": [
+        {
+          "contrast": "baseline vs es",
+          "mean_delta": 0.035304724767524956,
+          "corrected_t": 1.1613795477395439,
+          "df": 4,
+          "p": 0.31006860294186384,
+          "corrected_se": 0.030398955135933346,
+          "ci_low": -0.04909630542276466,
+          "ci_high": 0.11970575495781458,
+          "p_holm": 0.9302058088255916
+        },
+        {
+          "contrast": "baseline vs spacy",
+          "mean_delta": -0.00922432812344789,
+          "corrected_t": -0.23743909601476224,
+          "df": 4,
+          "p": 0.8239817756966182,
+          "corrected_se": 0.03884923872383,
+          "ci_low": -0.11708710681888647,
+          "ci_high": 0.09863845057199068,
+          "p_holm": 1.0
+        },
+        {
+          "contrast": "baseline vs hybrid",
+          "mean_delta": 0.062148808683362824,
+          "corrected_t": 0.6322620528336684,
+          "df": 4,
+          "p": 0.5615523963194173,
+          "corrected_se": 0.09829596510627936,
+          "ci_low": -0.21076454249666016,
+          "ci_high": 0.3350621598633858,
+          "p_holm": 1.0
+        }
+      ]
+    }
+  },
+  "gpt41": {
+    "model": "gpt41",
+    "folds_used": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_folds": 5,
+    "per_fold_macro_f1": {
+      "baseline": [
+        0.757159069668082,
+        0.7950587180335572,
+        0.7049206349206351,
+        0.5079441897322692,
+        0.884640522875817
+      ],
+      "es": [
+        0.42,
+        0.803234627184207,
+        0.7559497176946842,
+        0.5079441897322692,
+        0.884640522875817
+      ],
+      "spacy": [
+        0.757159069668082,
+        0.7229700270878504,
+        0.7547404547404547,
+        0.5079441897322692,
+        0.881632795586284
+      ],
+      "hybrid": [
+        0.7651089277772264,
+        0.7756349419524278,
+        0.7547404547404547,
+        0.512719298245614,
+        0.8784937284937285
+      ]
+    },
+    "mean": {
+      "baseline": 0.7299446270460721,
+      "es": 0.6743538114973955,
+      "spacy": 0.7248893073629881,
+      "hybrid": 0.7373394702418903
+    },
+    "std": {
+      "baseline": 0.14037599979014762,
+      "es": 0.19992291088183914,
+      "spacy": 0.13561878313858852,
+      "hybrid": 0.1350178011200024
+    },
+    "friedman": {
+      "chi2": 1.6046511627906923,
+      "df": 3,
+      "p": 0.6583356601619421,
+      "p_chi2_approx": 0.6583356601619421,
+      "p_permutation": 0.6886655667216639,
+      "kendall_w": 0.10697674418604615,
+      "note": "chi2 p is asymptotic (unreliable at n=5 blocks); p_permutation is exact Monte-Carlo (20k, within-block)"
+    },
+    "pairwise": [
+      {
+        "pair": "baseline vs es",
+        "mean_delta": 0.05559081554867662,
+        "cohen_dz": 0.35002369899865643,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.47755894082664685,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 3
+      },
+      {
+        "pair": "baseline vs spacy",
+        "mean_delta": 0.005055319683084036,
+        "cohen_dz": 0.11628294681683499,
+        "wilcoxon_p": 0.75,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.8076864643119146,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 3
+      },
+      {
+        "pair": "baseline vs hybrid",
+        "mean_delta": -0.007394843195818179,
+        "cohen_dz": -0.2841196335647535,
+        "wilcoxon_p": 0.8125,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.559752335523469,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "es vs spacy",
+        "mean_delta": -0.05053549586559258,
+        "cohen_dz": -0.30846460211192206,
+        "wilcoxon_p": 0.875,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.5282830102784777,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 4
+      },
+      {
+        "pair": "es vs hybrid",
+        "mean_delta": -0.0629856587444948,
+        "cohen_dz": -0.39818113054700244,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.42358564468959914,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "spacy vs hybrid",
+        "mean_delta": -0.012450162878902216,
+        "cohen_dz": -0.5440935056706898,
+        "wilcoxon_p": 0.25,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.29062181635501444,
+        "ttest_holm_p": 1.0,
+        "wilcoxon_eff_n": 4
+      }
+    ],
+    "wilcoxon_min_two_sided_p": 0.0625,
+    "nadeau_bengio": {
+      "ratio": 0.2500010307153164,
+      "correction_factor": 0.4500010307153164,
+      "family": "baseline-vs-each enrichment, Holm across 3",
+      "largest_delta_pair": "es vs hybrid",
+      "tests": [
+        {
+          "contrast": "baseline vs es",
+          "mean_delta": 0.055590815548676606,
+          "corrected_t": 0.5217839255641961,
+          "df": 4,
+          "p": 0.6293804165040797,
+          "corrected_se": 0.10653991590209913,
+          "ci_low": -0.24021141246589162,
+          "ci_high": 0.35139304356324486,
+          "p_holm": 1.0
+        },
+        {
+          "contrast": "baseline vs spacy",
+          "mean_delta": 0.005055319683084014,
+          "corrected_t": 0.17334418395050932,
+          "df": 4,
+          "p": 0.8707993504001912,
+          "corrected_se": 0.029163480238410158,
+          "ci_low": -0.07591548227538261,
+          "ci_high": 0.08602612164155063,
+          "p_holm": 1.0
+        },
+        {
+          "contrast": "baseline vs hybrid",
+          "mean_delta": -0.007394843195818202,
+          "corrected_t": -0.42354005787433,
+          "df": 4,
+          "p": 0.693683017358353,
+          "corrected_se": 0.01745960755856616,
+          "ci_low": -0.05587048514047371,
+          "ci_high": 0.041080798748837306,
+          "p_holm": 1.0
+        }
+      ]
+    }
+  },
+  "gpt51": {
+    "model": "gpt51",
+    "folds_used": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_folds": 5,
+    "per_fold_macro_f1": {
+      "baseline": [
+        0.6226034858387799,
+        0.7265493076663289,
+        0.689099500902623,
+        0.5143155350472424,
+        0.6637006386211614
+      ],
+      "es": [
+        0.7685319413642019,
+        0.7123944613306316,
+        0.6963554463554464,
+        0.5246108563989359,
+        0.881782945736434
+      ],
+      "spacy": [
+        0.7523066897923587,
+        0.7140589569160998,
+        0.6862806143628061,
+        0.4933106575963719,
+        0.881782945736434
+      ],
+      "hybrid": [
+        0.786163822254048,
+        0.7123944613306316,
+        0.6951144094001237,
+        0.5126419189851371,
+        0.8305006445473507
+      ]
+    },
+    "mean": {
+      "baseline": 0.6432536936152271,
+      "es": 0.7167351302371299,
+      "spacy": 0.7055479728808141,
+      "hybrid": 0.7073630513034582
+    },
+    "std": {
+      "baseline": 0.08140877523672134,
+      "es": 0.1296819190977991,
+      "spacy": 0.14029744225866445,
+      "hybrid": 0.12192630157083871
+    },
+    "friedman": {
+      "chi2": 2.312499999999999,
+      "df": 3,
+      "p": 0.5101304694005526,
+      "p_chi2_approx": 0.5101304694005526,
+      "p_permutation": 0.5501724913754312,
+      "kendall_w": 0.15416666666666662,
+      "note": "chi2 p is asymptotic (unreliable at n=5 blocks); p_permutation is exact Monte-Carlo (20k, within-block)"
+    },
+    "pairwise": [
+      {
+        "pair": "baseline vs es",
+        "mean_delta": -0.07348143662190276,
+        "cohen_dz": -0.7152650914623861,
+        "wilcoxon_p": 0.3125,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.18498390152337035,
+        "ttest_holm_p": 0.9249195076168517,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "baseline vs spacy",
+        "mean_delta": -0.06229427926558695,
+        "cohen_dz": -0.5835348050486344,
+        "wilcoxon_p": 0.8125,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.2619567536954526,
+        "ttest_holm_p": 0.9249195076168517,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "baseline vs hybrid",
+        "mean_delta": -0.06410935768823112,
+        "cohen_dz": -0.692684474390576,
+        "wilcoxon_p": 0.4375,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.19633154715743875,
+        "ttest_holm_p": 0.9249195076168517,
+        "wilcoxon_eff_n": 5
+      },
+      {
+        "pair": "es vs spacy",
+        "mean_delta": 0.011187157356315813,
+        "cohen_dz": 0.8329906589700726,
+        "wilcoxon_p": 0.25,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.1359868021761425,
+        "ttest_holm_p": 0.815920813056855,
+        "wilcoxon_eff_n": 4
+      },
+      {
+        "pair": "es vs hybrid",
+        "mean_delta": 0.009372078933671646,
+        "cohen_dz": 0.3643680818372329,
+        "wilcoxon_p": 0.625,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.4609415248476909,
+        "ttest_holm_p": 0.9249195076168517,
+        "wilcoxon_eff_n": 4
+      },
+      {
+        "pair": "spacy vs hybrid",
+        "mean_delta": -0.0018150784226441674,
+        "cohen_dz": -0.05592000855545343,
+        "wilcoxon_p": 0.8125,
+        "wilcoxon_holm_p": 1.0,
+        "ttest_p": 0.9065235218920489,
+        "ttest_holm_p": 0.9249195076168517,
+        "wilcoxon_eff_n": 5
+      }
+    ],
+    "wilcoxon_min_two_sided_p": 0.0625,
+    "nadeau_bengio": {
+      "ratio": 0.2500010307153164,
+      "correction_factor": 0.4500010307153164,
+      "family": "baseline-vs-each enrichment, Holm across 3",
+      "largest_delta_pair": "baseline vs es",
+      "tests": [
+        {
+          "contrast": "baseline vs es",
+          "mean_delta": -0.07348143662190287,
+          "corrected_t": -1.0662530231808969,
+          "df": 4,
+          "p": 0.34639025864808853,
+          "corrected_se": 0.06891557165548713,
+          "ci_low": -0.2648217382166883,
+          "ci_high": 0.11785886497288253,
+          "p_holm": 1.0
+        },
+        {
+          "contrast": "baseline vs spacy",
+          "mean_delta": -0.062294279265587005,
+          "corrected_t": -0.8698813313288913,
+          "df": 4,
+          "p": 0.43345230824092507,
+          "corrected_se": 0.07161238783044341,
+          "ci_low": -0.261122142928948,
+          "ci_high": 0.136533584397774,
+          "p_holm": 1.0
+        },
+        {
+          "contrast": "baseline vs hybrid",
+          "mean_delta": -0.06410935768823114,
+          "corrected_t": -1.032591865233314,
+          "df": 4,
+          "p": 0.3601354588922662,
+          "corrected_se": 0.06208586358923683,
+          "ci_low": -0.23648734975254598,
+          "ci_high": 0.1082686343760837,
+          "p_holm": 1.0
+        }
+      ]
+    }
+  }
+}

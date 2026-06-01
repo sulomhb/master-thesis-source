@@ -1,0 +1,206 @@
+{
+  "n_train": 441,
+  "n_test": 110,
+  "n_test_run": 110,
+  "categories": [
+    "Helse og omsorg",
+    "Opplæring og utdanning",
+    "Arbeid",
+    "Sosial og økonomisk trygghet",
+    "Kultur-Idrett-Fritid",
+    "Innbygger"
+  ],
+  "class_distribution": null,
+  "doc_length_stats": null,
+  "metrics": {
+    "baseline": {
+      "macro_f1": 0.6835870116692035,
+      "macro_precision": 0.6735963041933192,
+      "macro_recall": 0.7106602134524697,
+      "accuracy": 0.8454545454545455,
+      "per_cat": {
+        "Helse og omsorg": {
+          "precision": 0.9701492537313433,
+          "recall": 0.8227848101265823,
+          "f1": 0.8904109589041096,
+          "support": 79
+        },
+        "Opplæring og utdanning": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "Arbeid": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "Sosial og økonomisk trygghet": {
+          "precision": 0.5714285714285714,
+          "recall": 0.9411764705882353,
+          "f1": 0.7111111111111111,
+          "support": 17
+        },
+        "Kultur-Idrett-Fritid": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 2
+        },
+        "Innbygger": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "n": 110,
+      "n_total": 110,
+      "n_unparseable": 0
+    },
+    "es": {
+      "macro_f1": 0.6959175084175083,
+      "macro_precision": 0.6832964805601621,
+      "macro_recall": 0.7240259740259741,
+      "accuracy": 0.8703703703703703,
+      "per_cat": {
+        "Helse og omsorg": {
+          "precision": 0.9701492537313433,
+          "recall": 0.8441558441558441,
+          "f1": 0.9027777777777778,
+          "support": 77
+        },
+        "Opplæring og utdanning": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "Arbeid": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "Sosial og økonomisk trygghet": {
+          "precision": 0.6296296296296297,
+          "recall": 1.0,
+          "f1": 0.7727272727272727,
+          "support": 17
+        },
+        "Kultur-Idrett-Fritid": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 2
+        },
+        "Innbygger": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "n": 108,
+      "n_total": 110,
+      "n_unparseable": 2
+    },
+    "spacy": {
+      "macro_f1": 0.6901229617749265,
+      "macro_precision": 0.6809223115193265,
+      "macro_recall": 0.7124183006535948,
+      "accuracy": 0.8532110091743119,
+      "per_cat": {
+        "Helse og omsorg": {
+          "precision": 0.9701492537313433,
+          "recall": 0.8333333333333334,
+          "f1": 0.896551724137931,
+          "support": 78
+        },
+        "Opplæring og utdanning": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "Arbeid": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "Sosial og økonomisk trygghet": {
+          "precision": 0.6153846153846154,
+          "recall": 0.9411764705882353,
+          "f1": 0.7441860465116279,
+          "support": 17
+        },
+        "Kultur-Idrett-Fritid": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "support": 2
+        },
+        "Innbygger": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "n": 109,
+      "n_total": 110,
+      "n_unparseable": 1
+    },
+    "hybrid": {
+      "macro_f1": 0.7208333333333333,
+      "macro_precision": 0.7628820184790334,
+      "macro_recall": 0.7240259740259741,
+      "accuracy": 0.8691588785046729,
+      "per_cat": {
+        "Helse og omsorg": {
+          "precision": 0.9701492537313433,
+          "recall": 0.8441558441558441,
+          "f1": 0.9027777777777778,
+          "support": 77
+        },
+        "Opplæring og utdanning": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        },
+        "Arbeid": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "Sosial og økonomisk trygghet": {
+          "precision": 0.6071428571428571,
+          "recall": 1.0,
+          "f1": 0.7555555555555555,
+          "support": 17
+        },
+        "Kultur-Idrett-Fritid": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "Innbygger": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "n": 107,
+      "n_total": 110,
+      "n_unparseable": 3
+    }
+  },
+  "term_banks": "<omitted: domain term lists>"
+}

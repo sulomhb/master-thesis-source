@@ -1,0 +1,11 @@
+Rater,Type,Items Rated,Coverage %
+Haiku-3-5-v0.2,ai,406,51.1
+rater_C,human,30,3.8
+gpt-4.1-azure-v0.2,ai,444,55.9
+expert_B,human,45,5.7
+rater_D,human,20,2.5
+rater_E,human,20,2.5
+author,human,3,0.4
+rater_F,human,30,3.8
+rater_G,human,33,4.2
+expert_A,human,77,9.7

@@ -1,0 +1,67 @@
+{
+  "_comment": "SUBSTRATE SWAP 2026-05-30: the original DEV_full_Experiment_06_05_2026_1747 (55 items) was PRUNED from Langfuse (data retention — only 2 GT-ETI runs survive vs 40 on 2026-05-07). Re-pointed at the most recent surviving full run for the 55->71 item strengthening pass. RQ3 measures evaluator stability on a fixed (Q,A,context,fasitsvar) substrate, so the env/date the answers were generated does not affect the within-eval-stack noise we characterize (same rationale as the original DEV choice). The new run matches the current 71-item GT-ETI dataset exactly (no deleted-item 404s). The earlier 10-item DEV result is superseded as a pilot.",
+  "dataset_name": "GT-ETI",
+  "dataset_run_name": "QA_full_Experiment_18_05_2026_1831",
+  "_substrate_vetting_2026-05-30": "VETTED via rq3/_vet_substrate.py: QA_full_Experiment_28_05_2026_1446 (71 items) is 0/71 USABLE — the QA RAG was erroring on every item (answer={'error':'An error occurred',...}, 0 context chunks). QA_full_Experiment_18_05_2026_1831 (84 items) is 83/84 USABLE (answers ~1000-1300 chars, ~180 context chunks each). Chosen the 84-item run.",
+  "_dataset_run_name_prev": "DEV_full_Experiment_06_05_2026_1747 (55 items) — NOT deleted: the GT-ETI dataset was reorganized 2026-05, old runs relocated to the 'GT-ETI-old' dataset (44 runs) and new per-municipality datasets created. The original substrate is still available in GT-ETI-old if strict pilot-continuity is wanted; the 84-item QA run (current GT-ETI) was chosen for the strengthening pass and the 40-item result replicates the pilot on this fresh substrate (cross-substrate robustness).",
+  "_dataset_run_rejected": "QA_full_Experiment_28_05_2026_1446 (71 items, all RAG-error answers — unusable)",
+  "phase1": {
+    "_comment": "Phase 1 reuses an existing run rather than triggering a new Container Job. The chosen run is the most recent full GT-ETI run as of 2026-05-07.",
+    "source": "existing run (no new Container Job triggered)",
+    "rag_environment": "dev",
+    "executed_at": "2026-05-06T15:48:51.013Z",
+    "items_total": 55,
+    "items_with_traces": 55,
+    "candidates_considered": [
+      "DEV_full_Experiment_06_05_2026_1747 (CHOSEN — env=dev, 2026-05-06)",
+      "QA_full_Kommunefilter_06_05_2026_1024 (env=qa, 2026-05-06, has municipality flag null in metadata)",
+      "QA_full_Experiment_23_04_2026_0809 (env=qa, 2026-04-23)",
+      "QA_full_Experiment_22_04_2026_1748 (env=qa, 2026-04-22)"
+    ],
+    "selection_rationale": "Most recent full run with valid answers. Dev env is fine for RQ3 substrate because we are testing eval stability, not RAG quality — what matters is having real (question, answer, retrieved_context, fasitsvar) bundles, which this run provides. The dev RAG outage observed on 2026-05-07 (prompt_injection_node 500) does not affect this run because answers were generated 2026-05-06 when dev was healthy."
+  },
+  "phase2": {
+    "_comment": "repetitions_per_variant reduced from 10 to 5 on 2026-05-07 (D-010). item_limit set to 50 on 2026-05-30 (strengthening pass): the QA_full_18_05 run predates the current 71-item GT-ETI dataset, so 13/84 run-items reference DELETED dataset-items (404 on fetch, skipped). The first 50 run-items contain exactly 40 RESOLVABLE items -> we evaluate ~40 good items (user chose 40 of 84). retry_with_backoff patched to not retry deterministic 404s so deleted items skip instantly.",
+    "item_limit": 50,
+    "repetitions_per_variant": 5,
+    "image_tag": "hneti-dataset-eval:rq3",
+    "variants": [
+      {
+        "code": "B",
+        "name": "baseline",
+        "description": "Pure repeatability. Default config (Anthropic Haiku 4.5, default RAGAS+DeepEval prompts).",
+        "env_overrides": {}
+      },
+      {
+        "code": "M",
+        "name": "model_swap",
+        "description": "Same metrics, evaluator switched from Anthropic Haiku 4.5 to OpenAI GPT-5.1.",
+        "env_overrides": {
+          "EVALUATION_SOURCE_MODEL": "openai"
+        }
+      },
+      {
+        "code": "P",
+        "name": "prompt_rewrite",
+        "description": "Adds custom_faithfulness (single-step direct-judgment) alongside RAGAS faithfulness (two-step).",
+        "env_overrides": {
+          "RAGAS_METRICS": "faithfulness,custom_faithfulness,eti_evaluation"
+        }
+      },
+      {
+        "code": "C",
+        "name": "claim_coverage",
+        "description": "Adds expert_A's claim-decomposition metric: fasitsvar broken into atomic claims, % covered by answer.",
+        "env_overrides": {
+          "RAGAS_METRICS": "faithfulness,claim_coverage,eti_evaluation"
+        }
+      }
+    ]
+  },
+  "phase3": {
+    "raw_csv": "results/raw_scores.csv",
+    "summary_csv": "results/summary.csv",
+    "comparisons_csv": "results/baseline_vs_variant.csv",
+    "plots_dir": "results/plots"
+  }
+}

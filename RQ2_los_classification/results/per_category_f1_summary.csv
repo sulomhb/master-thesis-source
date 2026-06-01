@@ -1,0 +1,7 @@
+category,baseline,es,spacy,hybrid,support_test
+Helse og omsorg,0.9108,0.9238,0.9216,0.9309,115
+Sosial og økonomisk trygghet,0.8387,0.8525,0.8475,0.8421,26
+Opplæring og utdanning,0.8966,0.8889,0.8966,0.8966,13
+Kultur-Idrett-Fritid,0.5000,0.5000,0.5000,0.5000,3
+Arbeid,1.0000,1.0000,1.0000,1.0000,2
+Innbygger,0.2000,0.2500,0.2500,0.2857,2
